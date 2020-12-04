@@ -801,8 +801,8 @@ input.search-form:hover {
 }
 
 .index-blog{
-	padding-top: 2%;
-    padding-bottom: 2%;
+	padding-top: 5%;
+    padding-bottom: 0%;
 }
 
 @media (min-width: 576px){
