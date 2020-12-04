@@ -1,10 +1,6 @@
-.product-img{
-	background-image: url(/img/fon-wow.webp);
-}
-
-@media (max-width: 991px) {
+@media (min-width: 992px) {
 	.product-img{
-		background-image: url(/img/wow-fon.webp);
+		background-image: url(/img/fon-wow.webp);
 	}
 }
 

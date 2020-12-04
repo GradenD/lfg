@@ -6,6 +6,22 @@ body {
 	line-height: @line;
 }
 
+//цвет фона до 991px
+@section-color: #1b1c1c;
+@media (max-width: 991px) {
+	.product-img{
+		background: @section-color;
+	}
+
+	.contact-us{
+		background: @section-color;
+	}
+
+	.log-user{
+		background: @section-color;
+	}
+}
+
 header{
 	font-size: @size + 0.15rem;
 }

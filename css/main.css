@@ -1006,14 +1006,9 @@ input.search-form:hover {
 
 
 
-
-.log-user{
-	background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/img/log-user.webp);
-}
-
-@media (max-width: 991px) {
+@media (min-width: 992px) {
 	.log-user{
-		background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/img/log-user-min.webp);
+		background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/img/log-user.webp);
 	}
 }
 
@@ -1164,9 +1159,10 @@ input::-webkit-input-placeholder {
 		width: 100%;
 	}
 }
-
-.contact-us{
-	background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/img/elder.webp);
+@media (min-width: 992px) {
+	.contact-us{
+		background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/img/elder.webp);
+	}
 }
 
 .contact-us h1{
