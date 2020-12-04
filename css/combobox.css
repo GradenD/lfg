@@ -1,0 +1,153 @@
+.box{
+	position: relative;
+	display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+	-webkit-justify-content: flex-start;
+    justify-content: flex-start;
+	width: auto;
+	height: auto;
+}
+
+.combo-box {	
+	position: relative;
+	display:inline-block;
+	box-shadow: 0px 0px 5px 0px rgb(211,121,94,1)!important;
+	background-color: #222;
+	cursor:pointer;	
+	width: 250px;
+	height: 37px;
+}
+
+.combo-box .selector{
+	position: relative;
+	padding: 2px 5px;
+	width: auto;
+	color: #fff;
+}
+
+.combo-box .selector p{
+	width: 100%;
+	padding-left: 5px;
+    padding-right: 20px;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.combo-box .selector i{
+	position: absolute;
+    right: 5px;
+    top: 7px;
+}
+.combo-box ul {
+	position: absolute;
+	z-index: 2;
+	display:inline-block;
+	width: 100%;
+	padding:0;
+	margin:0;
+	box-shadow: 0px 0px 5px 0px rgb(211,121,94,1)!important;
+	background-color: #222;
+	color: #fff;
+	list-style: none;
+}
+
+.scroll-bar{
+	max-height: 230px;
+	overflow: auto;
+}
+
+.scroll-bar::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: #D3775C;
+}
+
+.scroll-bar::-webkit-scrollbar
+{
+	width: 5px;
+	border-radius: 4px;
+}
+
+.combo-box li {
+	padding: 5px 5px;
+	border-bottom: 1px solid #D3775C;
+}
+
+.li-active{
+	color: #D3775C;
+}
+
+.cm-xl{
+	width: 270px;
+	margin-right: 20px;
+}
+
+.cm-lg{
+	width: 250px;
+	margin-right: 20px;
+}
+
+.cm-md{
+	width: 150px;
+	margin-right: 20px;
+}
+
+.cm-sm{
+	width: 100px;
+	margin-right: 20px;
+}
+
+.cm-l{
+	width: 60px;
+	margin-right: 20px;
+}
+
+.combo-info{
+	padding-right: 15px;
+}
+
+.info-bouble{
+	width: 100%;
+	padding-bottom: 15px;
+}
+
+@media (max-width: 767px) {
+	.combo-info{
+		padding-right: 0px;
+		padding-bottom: 15px;
+	}
+}
+
+
+@media (max-width: 991px) {
+	.box{
+		flex-wrap: wrap;
+	}
+	
+	.combo-box {
+		margin-bottom: 30px;
+		height: 33px;
+	}
+	
+	.cm-xl{
+		width: 100%;
+		margin-right: 0px;
+	}
+}
+
+@media (max-width: 400px) {
+	.combo-box {
+		width: 100%;
+	}
+}
+
+@media (min-width: 992px) {
+	.range-mb{
+		display: none;
+	}
+}
+
+.range-mb p{
+	margin-right: 15px;
+}

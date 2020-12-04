@@ -1,0 +1,302 @@
+.product-img{
+	background-image: url(/img/fon-wow.webp);
+}
+
+@media (max-width: 991px) {
+	.product-img{
+		background-image: url(/img/wow-fon.webp);
+	}
+}
+
+.order{
+	padding-top: 30px;
+}
+.product-form {
+    display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+	-webkit-justify-content: space-between;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.config-form {
+    display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.config-form-color {
+    background-color: #222;
+    padding: 20px 5px;
+	padding-bottom: 40px;
+}
+
+.config-color{
+	
+}
+
+.config-head {
+    text-align: center;
+}
+
+.config-head img {
+    Width: 200px;
+    Height: 200px;
+    margin-bottom: 20px;
+}
+
+.config-head h1 {
+    margin: 0px 0px;
+	text-align: left;
+}
+
+.config-body {
+    text-align: left;
+    padding-top: 30px;
+}
+
+.config-body p {
+    margin-top: 0;
+    margin-bottom: 0rem;
+}
+
+.block-config {
+    border-bottom: 1px solid #ebeae6;
+    margin: 0px 0px;
+    padding: 13px 0px;
+}
+
+.param {
+    cursor: pointer;
+    margin: 3px 0px;
+    padding: 0px 0px;
+}
+
+.confg-active {
+    padding-left: 10px;
+    border-left: 5px solid #D3795E;
+}
+
+.info-config {
+    display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 30px;
+    text-align: left;
+    padding: 0px 15px;
+    padding-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.info-head {
+    display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #D3795E;
+}
+
+.info-head h1 {
+    margin: 0px 0px;
+}
+
+.info-body {
+    display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: column;
+    padding-top: 30px;
+}
+
+.info-body p {
+    margin-top: 0;
+    margin-bottom: 0rem;
+}
+
+.bio-row {
+    display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+    width: 100%;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+.bio-but button{
+	width: 150px;
+	float: right;
+}
+
+.bio-but{    
+	-webkit-justify-content: center;
+    justify-content: center;
+}
+
+@media (max-width: 767px){
+	.bio-but button{
+		width: 100%;
+		margin-top: 30px;
+	}
+}
+
+.checkbox{
+	padding-right: 15px;
+}
+
+.column-check{
+	width: 50%;
+}
+
+label {
+    margin-bottom: 0px; 
+}
+
+label.check {
+    display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+	-webkit-align-items: flex-end;
+	align-items: flex-end;
+}
+
+.check-r {
+    display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+	-webkit-align-items: flex-end;
+	align-items: flex-end;
+}
+
+.info-list {
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.info-list .list{
+    border-bottom: 1px solid rgba(198,198,255,.2);
+    cursor: pointer;
+}
+
+.info-list .list .title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    outline: none;
+    height: 54px;
+    position: relative;
+}
+
+.title p {
+    margin-bottom: 0rem;
+}
+
+.title i {
+    color: #fff;
+    position: absolute;
+    right: 0;
+    top: 23px;
+}
+
+.info-list .list .title-info p{
+	margin-bottom: 10px;
+}
+
+.info-list  .list .title-info {
+    display: none;
+}
+
+@media (max-width: 991px) {
+	
+	.config-col{
+		display: flex;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		flex-direction: row;
+		-webkit-justify-content: center;
+		justify-content: center;
+	}
+	
+	.config-body {
+		text-align: left;
+		padding: 0px 25px;
+	}
+	
+	.config-mb {
+		width: 100%;
+	}
+	
+	.config-form {
+		width: 100%;
+		margin-bottom: 30px;
+	}
+	
+	.info-config {
+		margin-left: 0px;
+	}
+	
+	.product-form {
+		flex-wrap: wrap;
+	}
+	
+	.bio-pc{
+		display: none;
+	}
+	
+	.bio-row{
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
+	
+	.column-check{
+		width: 100%;
+	}
+}
+
+@media (max-width: 768px){	
+
+	.config-col{
+		display: flex;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		flex-direction: column;
+		-webkit-justify-content: center;
+		justify-content: center;
+	}
+	
+	.config-body {
+		padding: 0px 0px;
+	}
+
+	.config-mb {
+		width: 100%;
+	}
+	
+	.config-head {
+		float: left;
+		width: 100%;
+	}
+	
+	.config-head img {
+		Width: 100%;
+		Height: auto;
+	}
+	
+	.config-body {
+		float: left;
+		width: 100%;
+		padding-top: 0px;
+	}
+}

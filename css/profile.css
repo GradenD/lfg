@@ -1,0 +1,314 @@
+.user-form{
+	display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.config-user{
+	display: flex;
+	background-color: #222;
+	padding: 20px 5px;
+	border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.user-head{
+	text-align: center;
+}
+
+.user-head img{
+	Width: 200px;
+	Height: 200px;
+	margin-bottom: 20px;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	background-color: #fff;
+}
+
+.user-head h1{
+	margin: 0px 0px;
+}
+
+.user-head p{
+	margin-top: 0;
+    margin-bottom: 0rem;
+}
+
+.user-body{
+	text-align: left;
+	padding-top: 30px;
+}
+
+.user-body p{
+	margin-top: 0;
+    margin-bottom: 0rem;
+}
+
+.block-config{
+	border-bottom: 1px solid #ebeae6;
+    margin: 0px 0px;
+    padding: 13px 0px;
+}
+
+.param{
+	cursor: pointer;
+	margin: 3px 0px;
+	padding: 0px 0px;
+}
+
+.confg-active{
+	padding-left: 20px;
+    border-left: 5px solid #D3795E;
+}
+
+.info-user{
+	display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	-webkit-justify-content: space-around;
+	justify-content: space-around;
+	width: 100%;
+    margin-left: 30px;
+	text-align: left;
+	background-color: #222;
+	padding: 20px 15px;
+	padding-top: 0px;
+	border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.info-head{
+	display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #D3795E;
+}
+
+.info-head h1{
+    margin: 0px 0px;
+}
+
+.info-boddy{
+	display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+}
+
+.info-boddy p{
+	margin-top: 0;
+    margin-bottom: 0rem;
+}
+
+.column{
+	width: 50%;
+}
+
+.bio-row{
+	display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+	width: 100%;
+    padding-bottom: 40px;
+	position: relative;
+}
+
+.bio-row p{
+	white-space: pre-wrap;
+	overflow: hidden; 
+	text-overflow: ellipsis;
+	max-width: 250px;
+}
+
+.bio-row-i{
+	display: none;
+	padding: 0px 5px;
+	padding-left: 7px;
+}
+
+.i-act{
+	display: inline-block;;
+}
+
+.info-footer{
+	float: left;
+	align-self: end;
+}
+
+.info-act{
+	display: none;
+}
+
+.btn-send{
+	width: 100%;
+	padding: 2px 15px;
+}
+
+.save-bt:hover{
+	box-shadow: 0px 0px 5px 0px rgb(211,121,94,1)!important;
+    background: #191919;
+}
+
+#info-fot{
+	margin-top: 0;
+    margin-bottom: 0rem;
+	font-size: 1rem;
+}
+
+@media (max-width: 998px){
+	.info-boddy {
+		flex-wrap: wrap;
+		padding-top: 15px;
+	}
+	
+	.column {
+		width: 100%;
+	}
+
+	.info-user{
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+}
+
+
+@media (max-width: 768px){
+	.user-form{
+		flex-wrap: wrap;
+	}
+	
+	.config-user{
+		width: 100%;
+		margin-bottom: 30px; 
+	}
+	
+	.user-mb{
+		width: 100%;
+	}
+	
+	.user-head{
+		float: left;
+		width: 50%;
+	}
+	
+	.user-body{
+		float: left;
+		width: 50%;
+		padding-top: 0px;
+	}
+	
+	.info-boddy p {
+		display: flex;
+		flex-wrap: wrap;
+		padding-right: 10px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	
+	.info-user{
+		margin-left: 0px; 
+	}
+	
+	.user-head img {
+		Width: 85%;
+		Height: 200px;
+	}
+}
+
+
+.orders-form{
+	display: block;
+	width: 100%;
+	background-color: #222;
+	padding: 30px 5px;
+	margin: 30px 0px;
+	text-align: left;
+}
+
+.orders-head h1{
+    margin: 0px 0px;
+	text-align: left;
+}
+
+.orders-head{
+	padding-bottom: 10px;
+	border-bottom: 1px solid #D3795E;
+}
+
+.orders-body{
+	padding-top: 20px;
+}
+
+.orders-body p{
+	margin-top: 0;
+    margin-bottom: 0rem;
+}
+
+.orders{
+    width: 100%;
+	padding-top: 40px;
+}
+
+.orders-title{
+	display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	width: 100%;
+	border-bottom: 1px solid #ebeae6
+}
+
+.title h2{
+	color: #f4f4f4;
+}
+
+.orders-info{
+	display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	padding-top: 20px;
+	width: 80%;
+}
+
+.price{
+
+}
+
+.price-info{
+	float: right;
+	text-align: right;
+	margin-left: 20px;
+}
+
+.info-password{
+	flex-direction: column;
+}
+
+.input-group{
+	width: 320px;
+}
+
+@media (max-width: 998px){
+	.info-password .bio-row{
+		flex-direction: column;
+	}
+
+	.input-group{
+		width: 100%;
+	}
+}
+
+.edit-color{
+	color: #808080;
+	cursor: pointer;
+}

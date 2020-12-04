@@ -1,0 +1,131 @@
+.works-img{
+	background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/img/fon-wow.webp);
+}
+
+.works-form {
+    display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+	-webkit-justify-content: space-between;
+    justify-content: space-between;
+	flex-direction: row;
+    width: 100%;
+	padding: 50px 0px;
+}
+
+@media (max-width: 991px){
+	
+	.works-form{
+		width: 100%;
+		flex-direction: column;
+		padding-top: 0px;
+	}
+	
+}
+
+.works-tinfo{
+	width: 50%;
+	padding-right: 50px;
+}
+
+@media (max-width: 991px){
+	
+	.works-tinfo{
+		width: 100%;
+		padding-right: 0px;
+		margin-bottom: 50px;
+	}
+	
+}
+
+.works-height{
+	min-height: 90px;
+}
+
+.works-tinfo h2{
+	color: #D3795E;
+}
+
+.works-list{
+	display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.works-list .list{
+	border-bottom: 1px solid rgba(198,198,255,.2);    
+	cursor: pointer;
+}
+
+.works-list .list .title{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    outline: none;
+    height: 54px;
+    position: relative;
+}
+
+.title i{
+	color: #fff;
+	position: absolute;
+    right: 0;
+    top: 23px;
+}
+
+.title p{
+	margin-bottom: 0rem;
+}
+
+.works-list .list .title-info {
+	display: none;
+}
+
+.works-site{
+	width: 50%;
+	padding-left: 50px;
+	display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: column;
+}
+
+.works-site h2{
+	color: #D3795E;
+}
+
+@media (max-width: 991px){
+	
+	.works-site{
+		width: 100%;
+		padding-left: 0px;
+	}
+	
+}
+
+.works-site .info {
+    display: flex;
+	display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: column;
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+.works-site .info .items{
+	width: 100%;
+}
+
+.items-final{
+	width: 100%
+}
+
+.items i{
+	color: #fff;
+	margin: 0px 5px;
+}
