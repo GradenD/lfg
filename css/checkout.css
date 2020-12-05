@@ -1,10 +1,6 @@
-.checkout-img{
-	background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/img/fon-wow.webp);
-}
-
-@media (max-width: 991px) {
+@media (min-width: 991px) {
 	.checkout-img{
-		background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/img/wow-fon.webp);
+		background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/img/fon-wow.webp);
 	}
 }
 
