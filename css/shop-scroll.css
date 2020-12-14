@@ -12,6 +12,7 @@
     overflow: hidden;
     overflow-y: scroll;
     scrollbar-width: none;
+    scroll-behavior: smooth;            
 }
 
 .card_container h1 {
@@ -120,6 +121,7 @@
     margin-right: 2rem;
     background: #1a121f;
     position: relative;
+    cursor: pointer;
 }
 
 .shadow-block {
@@ -174,6 +176,7 @@
 .shop-items .shop-info .text{
     overflow: hidden;
     overflow-y: scroll;
+    scroll-behavior: smooth;
     height: 200px;
     scrollbar-color: rgb(210,210,210) rgb(46,54,69) !important;
     scrollbar-width: thin !important;
@@ -214,6 +217,61 @@
 @media (max-width: 991px) {
     .card_container{
         height: auto;
+    }
+
+    .scroll-container{
+        display: none;
+    }
+
+    .shop-carousel-item {
+        padding: 50px 5%;
+    }
+
+    .shop-carousel-item p {
+        position: relative;
+        bottom: 15%;
+        width: 100%;
+    }
+
+    .card-shop{
+        width: 245px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .card-shop p{
+        position: absolute;
+        bottom: 5%;
+    }
+
+    .shop-carousel-item .text{
+        width: 90%;
+        margin: 50px auto;
+        overflow: hidden;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        height: 200px;
+        scrollbar-color: rgb(210,210,210) rgb(46,54,69) !important;
+        scrollbar-width: thin !important;
+        text-align: left;
+    }
+
+    .shop-carousel-item a {
+        display: inline-block;
+    }
+
+    .shop-carousel-item .text p{
+        bottom: 0%;
+    }
+
+    .shop-carousel-item .text::-webkit-scrollbar { /* chrome based */
+        width: 5px;  /* ширина scrollbar'a */
+        background: transparent;  /* опционально */
+    }
+    
+    .shop-carousel-item .text::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background: #D3775C;
     }
 }
 

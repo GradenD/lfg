@@ -5,8 +5,9 @@
 	<?php require_once 'library/main.php';?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <title>LFG BoosT</title>
+	<title>LFG BoosT</title>
 	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript" src="js/js.scroll.js"></script>
 	<script type="text/javascript" src='js/fontawesome.js'></script>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/bsnav.min.css">
