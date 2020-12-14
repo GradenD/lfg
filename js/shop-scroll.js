@@ -1,258 +1,455 @@
-/**
- * Full page
- */
-(function () {
-	'use strict';
-	
-	/**
-	 * Full scroll main function
-	 */
-	var fullScroll = function (params) {
-		/**
-		 * Main div
-		 * @type {Object}
-		 */
-		var main = document.getElementById(params.mainElement);
-		
-		/**
-		 * Sections divclass
-		 * @type {Array}
-		 */
-		var sections = main.getElementsByTagName('section');
-		
-		/**
-		 * Full page scroll configurations
-		 * @type {Object}
-		 */
-		var defaults = {
-			container : main,
-			sections : sections,
-			animateTime : params.animateTime || 0.7,
-			animateFunction : params.animateFunction || 'ease',
-			maxPosition: sections.length - 1,
-			currentPosition: 0,
-			displayDots: typeof params.displayDots != 'undefined' ? params.displayDots : true,
-			dotsPosition: params.dotsPosition || 'left'
-		};
+// ----------------------------------------------------------------------------------------------------
+// ScrollMe
+// A jQuery plugin for adding simple scrolling effects to web pages
+// http://scrollme.nckprsn.com
+// ----------------------------------------------------------------------------------------------------
 
-		this.defaults = defaults;
-		/**
-		 * Init build
-		 */
-		this.init();
+var scrollme = ( function( $ )
+{
+	// ----------------------------------------------------------------------------------------------------
+	// ScrollMe object
+
+	var _this = {};
+
+	// ----------------------------------------------------------------------------------------------------
+	// Properties
+
+	var $document = $( document );
+	var $window = $( window );
+
+	_this.body_height = 0;
+
+	_this.viewport_height = 0;
+
+	_this.viewport_top = 0;
+	_this.viewport_bottom = 0;
+
+	_this.viewport_top_previous = -1;
+
+	_this.elements = [];
+	_this.elements_in_view = [];
+
+	_this.property_defaults =
+	{
+		'opacity' : 1,
+		'translatex' : 0,
+		'translatey' : 0,
+		'translatez' : 0,
+		'rotatex' : 0,
+		'rotatey' : 0,
+		'rotatez' : 0,
+		'scale' : 1,
+		'scalex' : 1,
+		'scaley' : 1,
+		'scalez' : 1
 	};
 
-	/**
-	 * Init plugin
-	 */
-	fullScroll.prototype.init = function () {
-		this.buildPublicFunctions()
-			.buildSections()
-			.buildDots()
-			.addEvents();
+	_this.scrollme_selector = '.scrollme';
+	_this.animateme_selector = '.animateme';
 
-		var anchor = location.hash.replace('#', '').split('/')[0];
-		location.hash = 0;
-		this.changeCurrentPosition(anchor);
-		this.registerIeTags();
-	};
+	_this.update_interval = 10;
 
-	/**
-	 * Build sections
-	 * @return {Object} this(fullScroll)
-	 */
-	fullScroll.prototype.buildSections = function () {
-		var sections = this.defaults.sections;
-		for (var i = 0; i < sections.length; i++) {
-			sections[i].setAttribute('data-index', i);
+	// Easing functions
+
+	_this.easing_functions =
+	{
+		'linear' : function( x )
+		{
+			return x;
+		},
+
+		'easeout' : function( x )
+		{
+			return x * x * x;
+		},
+
+		'easein' : function( x )
+		{
+			x = 1 - x;
+			return 1 - ( x * x * x );
+		},
+
+		'easeinout' : function( x )
+		{
+			if( x < 0.5 )
+			{
+				return ( 4 * x * x * x );
+			}
+			else
+			{
+				x = 1 - x;
+				return 1 - ( 4 * x * x * x ) ;
+			}
 		}
-		return this;
 	};
 
-	/**
-	 * Build dots navigation
-	 * @return {Object} this (fullScroll)
-	 */
-	fullScroll.prototype.buildDots = function () {		
-		this.ul = document.createElement('ul');
-		
-		this.ul.className = this.updateClass(1, 'dots', this.ul.className);
-		this.ul.className = this.updateClass(1, this.defaults.dotsPosition == 'right' ? 'dots-right' : 'dots-left', this.ul.className);
+	// Document events to bind initialisation to
 
-		var _self = this;
-		var sections = this.defaults.sections;		
+	_this.init_events =
+	[
+		'ready',
+		'page:load', // Turbolinks
+		'page:change' // Turbolinks
+	];
 
-		for (var i = 0; i < sections.length; i++) {
-			var li = document.createElement('li');
-			var a = document.createElement('a');
-		
-			a.setAttribute('href', '#' + i);			
-			li.appendChild(a);
-			_self.ul.appendChild(li);
-		}
+	// ----------------------------------------------------------------------------------------------------
+	// Initialisation conditions
 
-		this.ul.childNodes[0].firstChild.className = this.updateClass(1, 'active', this.ul.childNodes[0].firstChild.className);
+	_this.init_if = function() { return true; }
 
-		if (this.defaults.displayDots) {
-			document.body.appendChild(this.ul);
-		}
+	// ----------------------------------------------------------------------------------------------------
+	// Initialisation
 
-		return this;
-	};
+	_this.init = function()
+	{
+		// Cancel if initialisation conditions not met
 
-	/**
-	 * Add Events
-	 * @return {Object} this(fullScroll)
-	 */
-	fullScroll.prototype.addEvents = function () {
-		
-		if (document.addEventListener) {
-			document.addEventListener('mousewheel', this.mouseWheelAndKey, false);
-			document.addEventListener('wheel', this.mouseWheelAndKey, false);
-			document.addEventListener('keyup', this.mouseWheelAndKey, false);
-			document.addEventListener('touchstart', this.touchStart, false);
-			document.addEventListener('touchend', this.touchEnd, false);
-			window.addEventListener("hashchange", this.hashChange, false);
+		if( !_this.init_if() ) return false;
 
-			/**
-			 * Enable scroll if decive don't have touch support
-			 */
-			if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-				if(!('ontouchstart' in window)){
-					document.body.style = "overflow: scroll;";
-					document.documentElement.style = "overflow: scroll;";
+		// Load all elements to animate
+
+		_this.init_elements();
+
+		// Get element & viewport sizes
+
+		_this.on_resize();
+
+		// Recalculate heights & positions on resize and rotate
+
+		$window.on( 'resize orientationchange' , function(){ _this.on_resize(); } );
+
+		// Recalculate heights & positions when page is fully loaded + a bit just in case
+
+		$window.load( function(){ setTimeout( function(){ _this.on_resize(); } , 100 ) });
+
+		// Start animating
+
+		setInterval( _this.update , _this.update_interval );
+
+		return true;
+	}
+
+	// ----------------------------------------------------------------------------------------------------
+	// Get list and pre-load animated elements
+
+	_this.init_elements = function()
+	{
+		// For each reference element
+
+		$( _this.scrollme_selector ).each( function()
+		{
+			var element = {};
+
+			element.element = $( this );
+
+			var effects = [];
+
+			// For each animated element
+
+			$( this ).find( _this.animateme_selector ).addBack( _this.animateme_selector ).each( function()
+			{
+				// Get effect details
+
+				var effect = {};
+
+				effect.element = $( this );
+
+				effect.when = effect.element.data( 'when' );
+				effect.from = effect.element.data( 'from' );
+				effect.to = effect.element.data( 'to' );
+
+				if( effect.element.is( '[data-crop]' ) )
+				{
+					effect.crop = effect.element.data( 'crop' );
 				}
-			}			
+				else
+				{
+					effect.crop = true;
+				}
 
-		} else {
-			document.attachEvent('onmousewheel', this.mouseWheelAndKey, false);
-			document.attachEvent('onkeyup', this.mouseWheelAndKey, false);
+				if( effect.element.is( '[data-easing]' ) )
+				{
+					effect.easing = _this.easing_functions[ effect.element.data( 'easing' ) ]
+				}
+				else
+				{
+					effect.easing = _this.easing_functions[ 'easeout' ];
+				}
+
+				// Get animated properties
+
+				var properties = {};
+
+				if( effect.element.is( '[data-opacity]' ) )    properties.opacity    = effect.element.data( 'opacity' );
+				if( effect.element.is( '[data-translatex]' ) ) properties.translatex = effect.element.data( 'translatex' );
+				if( effect.element.is( '[data-translatey]' ) ) properties.translatey = effect.element.data( 'translatey' );
+				if( effect.element.is( '[data-translatez]' ) ) properties.translatez = effect.element.data( 'translatez' );
+				if( effect.element.is( '[data-rotatex]' ) )    properties.rotatex    = effect.element.data( 'rotatex' );
+				if( effect.element.is( '[data-rotatey]' ) )    properties.rotatey    = effect.element.data( 'rotatey' );
+				if( effect.element.is( '[data-rotatez]' ) )    properties.rotatez    = effect.element.data( 'rotatez' );
+				if( effect.element.is( '[data-scale]' ) )      properties.scale      = effect.element.data( 'scale' );
+				if( effect.element.is( '[data-scalex]' ) )     properties.scalex     = effect.element.data( 'scalex' );
+				if( effect.element.is( '[data-scaley]' ) )     properties.scaley     = effect.element.data( 'scaley' );
+				if( effect.element.is( '[data-scalez]' ) )     properties.scalez     = effect.element.data( 'scalez' );
+
+				effect.properties = properties;
+
+				effects.push( effect );
+			});
+
+			element.effects = effects;
+
+			_this.elements.push( element );
+		});
+	}
+
+	// ----------------------------------------------------------------------------------------------------
+	// Update elements
+
+	_this.update = function()
+	{
+		window.requestAnimationFrame( function()
+		{
+			_this.update_viewport_position();
+
+			if( _this.viewport_top_previous != _this.viewport_top )
+			{
+				_this.update_elements_in_view();
+				_this.animate();
+			}
+
+			_this.viewport_top_previous = _this.viewport_top;
+		});
+	}
+
+	// ----------------------------------------------------------------------------------------------------
+	// Animate stuff
+
+	_this.animate = function()
+	{
+		// For each element in viewport
+
+		var elements_in_view_length = _this.elements_in_view.length;
+
+		for( var i=0 ; i<elements_in_view_length ; i++ )
+		{
+			var element = _this.elements_in_view[i];
+
+			// For each effect
+
+			var effects_length = element.effects.length;
+
+			for( var e=0 ; e<effects_length ; e++ )
+			{
+				var effect = element.effects[e];
+
+				// Get effect animation boundaries
+
+				switch( effect.when )
+				{
+					case 'view' : // Maintained for backwards compatibility
+					case 'span' :
+						var start = element.top - _this.viewport_height;
+						var end = element.bottom;
+						break;
+
+					case 'exit' :
+						var start = element.bottom - _this.viewport_height;
+						var end = element.bottom;
+						break;
+
+					default :
+						var start = element.top - _this.viewport_height;
+						var end = element.top;
+						break;
+				}
+
+				// Crop boundaries
+
+				if( effect.crop )
+				{
+					if( start < 0 ) start = 0;
+					if( end > ( _this.body_height - _this.viewport_height ) ) end = _this.body_height - _this.viewport_height;
+				}
+
+				// Get scroll position of reference selector
+
+				var scroll = ( _this.viewport_top - start ) / ( end - start );
+
+				// Get relative scroll position for effect
+
+				var from = effect[ 'from' ];
+				var to = effect[ 'to' ];
+
+				var length = to - from;
+
+				var scroll_relative = ( scroll - from ) / length;
+
+				// Apply easing
+
+				var scroll_eased = effect.easing( scroll_relative );
+
+				// Get new value for each property
+
+				var opacity    = _this.animate_value( scroll , scroll_eased , from , to , effect , 'opacity' );
+				var translatey = _this.animate_value( scroll , scroll_eased , from , to , effect , 'translatey' );
+				var translatex = _this.animate_value( scroll , scroll_eased , from , to , effect , 'translatex' );
+				var translatez = _this.animate_value( scroll , scroll_eased , from , to , effect , 'translatez' );
+				var rotatex    = _this.animate_value( scroll , scroll_eased , from , to , effect , 'rotatex' );
+				var rotatey    = _this.animate_value( scroll , scroll_eased , from , to , effect , 'rotatey' );
+				var rotatez    = _this.animate_value( scroll , scroll_eased , from , to , effect , 'rotatez' );
+				var scale      = _this.animate_value( scroll , scroll_eased , from , to , effect , 'scale' );
+				var scalex     = _this.animate_value( scroll , scroll_eased , from , to , effect , 'scalex' );
+				var scaley     = _this.animate_value( scroll , scroll_eased , from , to , effect , 'scaley' );
+				var scalez     = _this.animate_value( scroll , scroll_eased , from , to , effect , 'scalez' );
+
+				// Override scale values
+
+				if( 'scale' in effect.properties )
+				{
+					scalex = scale;
+					scaley = scale;
+					scalez = scale;
+				}
+
+				// Update properties
+
+				effect.element.css(
+				{
+					'opacity' : opacity,
+					'transform' : 'translate3d( '+translatex+'px , '+translatey+'px , '+translatez+'px ) rotateX( '+rotatex+'deg ) rotateY( '+rotatey+'deg ) rotateZ( '+rotatez+'deg ) scale3d( '+scalex+' , '+scaley+' , '+scalez+' )'
+				} );
+			}
 		}
-		
-		return this;
-	};	
+	}
 
-	/**
-	 * Build public functions
-	 * @return {[type]} [description]
-	 */
-	fullScroll.prototype.buildPublicFunctions = function () {
-		var mTouchStart = 0;
-		var mTouchEnd = 0;
-		var _self = this;
+	// ----------------------------------------------------------------------------------------------------
+	// Calculate property values
 
-		this.mouseWheelAndKey = function (event) {
-			if (event.deltaY > 0 || event.keyCode == 40) {	
-				_self.defaults.currentPosition ++;
-				_self.changeCurrentPosition(_self.defaults.currentPosition);				
-			} else if (event.deltaY < 0 || event.keyCode == 38) {
-				_self.defaults.currentPosition --;
-				_self.changeCurrentPosition(_self.defaults.currentPosition);	
+	_this.animate_value = function( scroll , scroll_eased , from , to , effect , property )
+	{
+		var value_default = _this.property_defaults[ property ];
+
+		// Return default value if property is not animated
+
+		if( !( property in effect.properties ) ) return value_default;
+
+		var value_target = effect.properties[ property ];
+
+		var forwards = ( to > from ) ? true : false;
+
+		// Return boundary value if outside effect boundaries
+
+		if( scroll < from && forwards ) { return value_default; }
+		if( scroll > to && forwards ) { return value_target; }
+
+		if( scroll > from && !forwards ) { return value_default; }
+		if( scroll < to && !forwards ) { return value_target; }
+
+		// Calculate new property value
+
+		var new_value = value_default + ( scroll_eased * ( value_target - value_default ) );
+
+		// Round as required
+
+		switch( property )
+		{
+			case 'opacity'    : new_value = new_value.toFixed(2); break;
+			case 'translatex' : new_value = new_value.toFixed(0); break;
+			case 'translatey' : new_value = new_value.toFixed(0); break;
+			case 'translatez' : new_value = new_value.toFixed(0); break;
+			case 'rotatex'    : new_value = new_value.toFixed(1); break;
+			case 'rotatey'    : new_value = new_value.toFixed(1); break;
+			case 'rotatez'    : new_value = new_value.toFixed(1); break;
+			case 'scale'      : new_value = new_value.toFixed(3); break;
+			default : break;
+		}
+
+		// Done
+
+		return new_value;
+	}
+
+	// ----------------------------------------------------------------------------------------------------
+	// Update viewport position
+
+	_this.update_viewport_position = function()
+	{
+		_this.viewport_top = $window.scrollTop();
+		_this.viewport_bottom = _this.viewport_top + _this.viewport_height;
+	}
+
+	// ----------------------------------------------------------------------------------------------------
+	// Update list of elements in view
+
+	_this.update_elements_in_view = function()
+	{
+		_this.elements_in_view = [];
+
+		var elements_length = _this.elements.length;
+
+		for( var i=0 ; i<elements_length ; i++ )
+		{
+			if ( ( _this.elements[i].top < _this.viewport_bottom ) && ( _this.elements[i].bottom > _this.viewport_top ) )
+			{
+				_this.elements_in_view.push( _this.elements[i] );
 			}
-			_self.removeEvents();
-		};
+		}
+	}
 
-		this.touchStart = function (event) {
-			mTouchStart = parseInt(event.changedTouches[0].clientY);
-			mTouchEnd = 0;
-		};
+	// ----------------------------------------------------------------------------------------------------
+	// Stuff to do on resize
 
-		this.touchEnd = function (event) {
-			mTouchEnd = parseInt(event.changedTouches[0].clientY);
-			if (mTouchEnd - mTouchStart > 100 || mTouchStart - mTouchEnd > 100) {
-				if (mTouchEnd > mTouchStart) {
-					_self.defaults.currentPosition --;
-				} else {
-					_self.defaults.currentPosition ++;					
-				}
-				_self.changeCurrentPosition(_self.defaults.currentPosition);
-			}			
-		};
+	_this.on_resize = function()
+	{
+		// Update viewport/element data
 
-		this.hashChange = function (event) {
-			if (location) {
-				var anchor = location.hash.replace('#', '').split('/')[0];
-				if (anchor !== "") {
-					if (anchor < 0) {
-						_self.changeCurrentPosition(0);
-					} else if (anchor > _self.defaults.maxPosition) {
-						_self.changeCurrentPosition(_self.defaults.maxPosition);
-					} else {
-						_self.defaults.currentPosition = anchor;
-						_self.animateScroll();
-					}					
-				}				
-			}
-		};
+		_this.update_viewport();
+		_this.update_element_heights();
 
-		this.removeEvents = function () {
-			if (document.addEventListener) {
-			document.removeEventListener('mousewheel', this.mouseWheelAndKey, false);
-			document.removeEventListener('wheel', this.mouseWheelAndKey, false);
-			document.removeEventListener('keyup', this.mouseWheelAndKey, false);
-			document.removeEventListener('touchstart', this.touchStart, false);
-			document.removeEventListener('touchend', this.touchEnd, false);
+		// Update display
 
-			} else {
-				document.detachEvent('onmousewheel', this.mouseWheelAndKey, false);
-				document.detachEvent('onkeyup', this.mouseWheelAndKey, false);
-			}
+		_this.update_viewport_position();
+		_this.update_elements_in_view();
+		_this.animate();
+	}
 
-			setTimeout(function(){
-				_self.addEvents();
-			}, 600);
-		};
+	// ----------------------------------------------------------------------------------------------------
+	// Update viewport parameters
 
-		this.animateScroll = function () {
-			var animateTime = this.defaults.animateTime;
-			var animateFunction = this.defaults.animateFunction;
-			var position = this.defaults.currentPosition * 100;
+	_this.update_viewport = function()
+	{
+		_this.body_height = $document.height();
+		_this.viewport_height = $window.height();
+	}
 
-			this.defaults.container.style.webkitTransform = 'translateY(-' + position + '%)';
-			this.defaults.container.style.mozTransform = 'translateY(-' + position + '%)';
-			this.defaults.container.style.msTransform = 'translateY(-' + position + '%)';
-			this.defaults.container.style.transform = 'translateY(-' + position + '%)';
-			this.defaults.container.style.webkitTransition = 'all ' + animateTime + 's ' + animateFunction;
-			this.defaults.container.style.mozTransition = 'all ' + animateTime + 's ' + animateFunction;
-			this.defaults.container.style.msTransition = 'all ' + animateTime + 's ' + animateFunction;
-			this.defaults.container.style.transition = 'all ' + animateTime + 's ' + animateFunction;
+	// ----------------------------------------------------------------------------------------------------
+	// Update height of animated elements
 
-			for (var i = 0; i < this.ul.childNodes.length; i++) {
-					this.ul.childNodes[i].firstChild.className = this.updateClass(2, 'active', this.ul.childNodes[i].firstChild.className);
-					if (i == this.defaults.currentPosition) {
-					this.ul.childNodes[i].firstChild.className = this.updateClass(1, 'active', this.ul.childNodes[i].firstChild.className);
-				}
-			}
-		};
+	_this.update_element_heights = function()
+	{
+		var elements_length = _this.elements.length;
 
-		this.changeCurrentPosition = function (position) {
-			if (position !== "") {
-				_self.defaults.currentPosition = position;
-				location.hash = _self.defaults.currentPosition;
-			}
-		};
+		for( var i=0 ; i<elements_length ; i++ )
+		{
+			var element_height = _this.elements[i].element.outerHeight();
+			var position = _this.elements[i].element.offset();
 
-		this.registerIeTags = function () {
-			document.createElement('section'); 
-		};
+			_this.elements[i].height = element_height;
+			_this.elements[i].top = position.top;
+			_this.elements[i].bottom = position.top + element_height;
+		}
+	}
 
-		this.updateClass = function (type, newClass, currentClass) {
-			if (type == 1) {
-				return currentClass += ' ' + newClass;
-			} else if (type == 2) {
-				return currentClass.replace(newClass, '');
-			}
-		};
+	// ----------------------------------------------------------------------------------------------------
+	// Bind initialisation
 
-		return this;
-	};
-	window.fullScroll = fullScroll;
-})();
+	$document.on( _this.init_events.join( ' ' ) , function(){ _this.init(); } );
 
-new fullScroll({
-    mainElement: "main",
-    displayDots: true,
-    dotsPosition: "right",
-    animateTime: 0.7,
-    animateFunction: "ease",
-});
+	// ----------------------------------------------------------------------------------------------------
+
+	return _this;
+
+	// ----------------------------------------------------------------------------------------------------
+
+})( jQuery );

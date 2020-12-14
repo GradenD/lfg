@@ -42,7 +42,8 @@
 		<div class="footer-copyright text-center py-3">
 			<p>© LOOKING FOR GROUP BOOST 2020</p>
 		</div>
-    </footer>  	
+	</footer> 
+</div> 	
 	<script type="text/javascript" src='js/bsnav.min.js'></script>		
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>	
 	<script src="//cdn.jsdelivr.net/npm/less" ></script>

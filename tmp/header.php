@@ -16,6 +16,7 @@
     <link rel="shortcut icon" href="img/logo.png">
   </head>
 <body>
+	<div class="flex-wrapper">
 	<header id="header">
 		<div class="pc">
 			<?php 

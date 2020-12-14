@@ -1,5 +1,6 @@
 .wrapper-shop{
-    min-height: calc(100vh - 440px);
+    height: 100%;
+    padding-bottom: 1rem;
 }
 .wrapper-shop img{
     box-shadow: 0 6px 16px #ffffff;
@@ -7,7 +8,7 @@
 
 .card_container{
     position: relative;
-    height: 700px;
+    height: 650px;
     overflow: hidden;
     overflow-y: scroll;
     scrollbar-width: none;
@@ -32,12 +33,12 @@
 
 .scroll-container section {
 	width: 100%;
-	height: 100%;
+    height: auto;
+    margin-bottom: 5rem;
 }
 
 .scroll-container section div {
 	text-align: left;
-	position: relative;
 }
 
 .dots {	
@@ -117,10 +118,47 @@
     width: 242px;
     height: 361px;
     margin-right: 2rem;
+    background: #1a121f;
+    position: relative;
+}
+
+.shadow-block {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: .5s;
+    padding: 5px;
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    align-items: center;
+    align-content: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.shadow-block:hover{
+	opacity: 1;
+}
+
+.shop-items .shop-img:hover img {
+	opacity: .5;
+ }
+
+.shadow-block p{
+	color: #ffff;
+	z-index: 3;    
 }
 
 .shop-items .shop-img img{
     width: auto;
+    z-index: 1;
     height: auto;
 }
 
@@ -151,19 +189,52 @@
     background: #D3775C;
 }
 
-@media (min-width: 991px) {
+@media (min-width: 992px) {
     .shop-items p{
         margin-bottom: 0rem;
     }
 }
 
+@media (min-width: 992px) and (min-height: 980px) {
+    .card_container {
+        height: 750px;
+    }
+}
 
-@media (max-width: 991px) {
-    .scroll-container{
-        display: none;
+@media (min-width: 992px) and (min-height: 1200px) {
+    .card_container {
+        height: 850px;
     }
 
+    .wrapper-shop {
+        height: 100%;
+    }
+}
+
+@media (max-width: 991px) {
     .card_container{
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .shop-items{
+        flex-direction: column;
+    }
+
+    .shop-items .shop-info .text{
+        margin: 1rem 0rem;
+    }
+
+    .shop-items .shop-img {
+        width: 245px;
+        height: auto;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }
+
+    .shop-items .shop-img img {
+        width: 100%;
         height: auto;
     }
 }
