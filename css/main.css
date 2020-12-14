@@ -3,6 +3,10 @@ html, body {
 }
 
 body {
+	display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-direction: column;
     background: #fff;
     font-family: 'Barlow';
 	font-style: normal;
@@ -162,7 +166,9 @@ button:focus {
 
 
 .wrapper {
-    min-height: calc(100vh - 440px);
+	position: relative;
+    flex: 1 0 auto;
+    width: 100%;
 }
 
 h1,

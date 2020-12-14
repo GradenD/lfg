@@ -1,108 +1,214 @@
 <link rel="stylesheet" type="text/css" href="css/shop-scroll.css">
-<section id="shop" class="no-margin shop wrapper">
+<section id="shop" class="no-margin shop wrapper-shop">
 	<div class="card_container container">
 		<div id="main" class="scroll-container">
 			<section class="section1">
 				<div class="shop-items">
 					<div class="shop-img">
-						<img data-src="img/shop/Dungeons.jpg">
+						<a href="/?page=product">
+							<img data-src="img/shop/Dungeons.webp">
+						</a>
 					</div>
 					<div class="shop-info">
 						<h1>Dungeons</h1>
-						<p>
-							Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
-							source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
-							loot based upon their performance in the previous week's Mythic+ dungeon lockout.
-						</p>
-						<a href="/?page=product">
-							<button class="btn-send"> 
-								SEND
-							</button>
-						</a>
+						<div class="text">
+							<p>
+								Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
+								source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
+								loot based upon their performance in the previous week's Mythic+ dungeon lockout.
+								Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
+								source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
+								loot based upon their performance in the previous week's Mythic+ dungeon lockout.
+								Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
+								source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
+								loot based upon their performance in the previous week's Mythic+ dungeon lockout.
+								Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
+								source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
+								loot based upon their performance in the previous week's Mythic+ dungeon lockout.
+							</p>
+						</div>
+						<p>From $ 39</p>
 					</div>
         		</div>
 			</section>
 			<section class="section2">
 				<div class="shop-items">
 					<div class="shop-img">
-						<img data-src="img/shop/Horrific.jpg">
+						<a href="/?page=product">
+							<img data-src="img/shop/Horrific.webp">
+						</a>
 					</div>
 					<div class="shop-info">
 						<h1>Horrific Visions</h1>
-						<p>
-							Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
-							source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
-							loot based upon their performance in the previous week's Mythic+ dungeon lockout.
-						</p>
-						<a href="/?page=product">
-							<button class="btn-send"> 
-								SEND
-							</button>
-						</a>
+						<div class="text">
+							<p>
+								Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
+								source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
+								loot based upon their performance in the previous week's Mythic+ dungeon lockout.
+								Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
+								source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
+								loot based upon their performance in the previous week's Mythic+ dungeon lockout.
+								Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
+								source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
+								loot based upon their performance in the previous week's Mythic+ dungeon lockout.
+								Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
+								source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
+								loot based upon their performance in the previous week's Mythic+ dungeon lockout.
+							</p>
+						</div>
+						<p>From $ 39</p>
 					</div>
         		</div>
 			</section>
 			<section class="section3">
 				<div class="shop-items">
 					<div class="shop-img">
-						<img data-src="img/shop/PowerLvLing.jpg">
+						<a href="/?page=product">
+							<img data-src="img/shop/PowerLvLing.webp">
+						</a>
 					</div>
 					<div class="shop-info">
 						<h1>Power LvLing</h1>
-						<p>
-							Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
-							source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
-							loot based upon their performance in the previous week's Mythic+ dungeon lockout.
-						</p>
-						<a href="/?page=product">
-							<button class="btn-send"> 
-								SEND
-							</button>
-						</a>
+						<div class="text">
+							<p>
+								Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
+								source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
+								loot based upon their performance in the previous week's Mythic+ dungeon lockout.
+								Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
+								source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
+								loot based upon their performance in the previous week's Mythic+ dungeon lockout.
+								Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
+								source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
+								loot based upon their performance in the previous week's Mythic+ dungeon lockout.
+								Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
+								source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
+								loot based upon their performance in the previous week's Mythic+ dungeon lockout.
+							</p>
+						</div>
+						<p>From $ 39</p>
 					</div>
         		</div>
 			</section>
 			<section class="section4">
 				<div class="shop-items">
 					<div class="shop-img">
-						<img data-src="img/shop/PVP.jpg">
+						<a href="/?page=product">
+							<img data-src="img/shop/PVP.webp">
+						</a>
 					</div>
 					<div class="shop-info">
 						<h1>PVP</h1>
-						<p>
-							Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
-							source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
-							loot based upon their performance in the previous week's Mythic+ dungeon lockout.
-						</p>
-						<a href="/?page=product">
-							<button class="btn-send"> 
-								SEND
-							</button>
-						</a>
+						<div class="text">
+							<p>
+								Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
+								source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
+								loot based upon their performance in the previous week's Mythic+ dungeon lockout.
+								Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
+								source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
+								loot based upon their performance in the previous week's Mythic+ dungeon lockout.
+								Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
+								source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
+								loot based upon their performance in the previous week's Mythic+ dungeon lockout.
+								Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
+								source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
+								loot based upon their performance in the previous week's Mythic+ dungeon lockout.
+							</p>
+						</div>
+						<p>From $ 39</p>
 					</div>
         		</div>
 			</section>
 			<section class="section5">
 				<div class="shop-items">
 					<div class="shop-img">
-						<img data-src="img/shop/Raids.jpg">
+						<a href="/?page=product">
+							<img data-src="img/shop/Raids.webp">
+						</a>
 					</div>
 					<div class="shop-info">
 						<h1>Raids</h1>
-						<p>
-							Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
-							source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
-							loot based upon their performance in the previous week's Mythic+ dungeon lockout.
-						</p>
-						<a href="/?page=product">
-							<button class="btn-send"> 
-								SEND
-							</button>
-						</a>
+						<div class="text">
+							<p>
+								Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
+								source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
+								loot based upon their performance in the previous week's Mythic+ dungeon lockout.
+								Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
+								source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
+								loot based upon their performance in the previous week's Mythic+ dungeon lockout.
+								Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
+								source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
+								loot based upon their performance in the previous week's Mythic+ dungeon lockout.
+								Completing a Mythic+ dungeon rewards epic gear at a higher base ilvl than any other 
+								source besides raiding. Each week, players will receive a guaranteed item (and titan resdiuum) of 
+								loot based upon their performance in the previous week's Mythic+ dungeon lockout.
+							</p>
+						</div>
+						<p>From $ 39</p>
 					</div>
         		</div>
 			</section>
 		</div>
-	</div>		
+		<div class="row version-mb">
+			<div id="carouselExampleIndicators" class="carousel slide shop-carousel" data-ride="carousel">
+				<ol class="carousel-indicators shop-carousel-indicators">
+					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+				</ol>
+				<div class="carousel-inner shop-carousel-inner">
+					<div class="carousel-item shop-carousel-item active">
+						<a href="/?page=product">
+							<div class="card-shop">
+								<img data-src="/img/shop/Dungeons.webp">
+								<p>Dungeons</p>
+							</div>
+						</a>
+					</div>
+					<div class="carousel-item shop-carousel-item">
+						<a href="/?page=product">
+							<div class="card-shop">
+								<img data-src="/img/shop/Horrific.webp">
+								<p>Horrific Visions</p>
+							</div>
+						</a>
+					</div>
+					<div class="carousel-item shop-carousel-item">
+						<a href="/?page=product">
+							<div class="card-shop">
+								<img data-src="/img/shop/Raids.webp">
+								<p>Raids</p>
+							</div>
+						</a>
+					</div>
+					<div class="carousel-item shop-carousel-item">
+						<a href="/?page=product">
+							<div class="card-shop">
+								<img data-src="/img/shop/PVP.webp">
+								<p>PVP</p>
+							</div>
+						</a>
+					</div>
+					<div class="carousel-item shop-carousel-item">
+						<a href="/?page=product">
+							<div class="card-shop">
+								<img data-src="/img/shop/PowerLvLing.webp">
+								<p>Power LvLing</p>
+							</div>
+						</a>
+					</div>
+				</div>
+				<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
+	</div>	
 </section>
 <script type="text/javascript" src='js/shop-scroll.js'></script>

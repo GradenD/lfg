@@ -1,10 +1,16 @@
+.wrapper-shop{
+    min-height: calc(100vh - 440px);
+}
+.wrapper-shop img{
+    box-shadow: 0 6px 16px #ffffff;
+}
 
 .card_container{
     position: relative;
-    height: 100%;
-    height: 80vh;
+    height: 700px;
     overflow: hidden;
     overflow-y: scroll;
+    scrollbar-width: none;
 }
 
 .card_container h1 {
@@ -88,8 +94,8 @@
 }
 
 .dots-right {
-    right: 10px;
     display: none;
+    right: 10px;
 }
 
 .dots-left {
@@ -108,9 +114,8 @@
 }
 
 .shop-items .shop-img{
-    width: auto;
+    width: 242px;
     height: 361px;
-    box-shadow: 0 6px 16px #ffffff;
     margin-right: 2rem;
 }
 
@@ -126,4 +131,39 @@
     flex-direction: column;
     -webkit-justify-content: space-between;
     justify-content: space-between;
+}
+
+.shop-items .shop-info .text{
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 200px;
+    scrollbar-color: rgb(210,210,210) rgb(46,54,69) !important;
+    scrollbar-width: thin !important;
+}
+
+.shop-items .shop-info .text::-webkit-scrollbar { /* chrome based */
+    width: 5px;  /* ширина scrollbar'a */
+    background: transparent;  /* опционально */
+}
+
+.shop-items .shop-info .text::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: #D3775C;
+}
+
+@media (min-width: 991px) {
+    .shop-items p{
+        margin-bottom: 0rem;
+    }
+}
+
+
+@media (max-width: 991px) {
+    .scroll-container{
+        display: none;
+    }
+
+    .card_container{
+        height: auto;
+    }
 }
