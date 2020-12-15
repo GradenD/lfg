@@ -1,3 +1,10 @@
+$(window).on('load', function() {
+    setTimeout(function() {
+        $(window).scrollTop(0);
+        $.scrollify.update();
+    });
+});
+
 $(document).ready(function(){
    /* $(".card_container").scroll(function(){
         console.log("Scrolled :P");
@@ -16,7 +23,7 @@ $(function() {
             standardScrollElements: "",
             setHeights: false,
             overflowScroll: true,
-            updateHash: true,
+            updateHash: false,
             touchScroll:true,
             before:function() {},
             after:function() {},

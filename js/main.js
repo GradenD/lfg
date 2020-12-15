@@ -1,7 +1,9 @@
 $(document).ready(function(){
 	$(function () {
-		$('#carousel').carousel({
-			interval: 1000,
+		$('#carouselExampleIndicators').carousel({
+			interval: 3000,
+			pause: 'hover',
+			ride: 'carousel',
 		});
 	});
 	

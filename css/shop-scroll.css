@@ -253,7 +253,8 @@
         height: 200px;
         scrollbar-color: rgb(210,210,210) rgb(46,54,69) !important;
         scrollbar-width: thin !important;
-        text-align: left;
+        text-align: justify;
+        padding-right: 15px;
     }
 
     .shop-carousel-item a {
