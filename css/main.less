@@ -1,13 +1,18 @@
 @size: 1.2rem;
 @line: 1.5;
-
+@b-color: #1b1c1c;
 body {
+	background: @b-color;
     font-size: @size;
 	line-height: @line;
 }
 
+.preloader {
+	background: @b-color;
+}
+
 //цвет фона до 991px
-@section-color: #1b1c1c;
+@section-color: @b-color;
 @media (max-width: 991px) {
 	.product-img{
 		background: @section-color;

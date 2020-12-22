@@ -5,14 +5,14 @@
 	<div class="card_container container">
 		<div id="main" class="scroll-container">
 			<div class="shop-items">
-				<div class="shop-img">
-					<a href="/?page=product">
+				<a href="/?page=product">
+					<div class="shop-img">
 						<img data-src="img/shop/Dungeons.webp">
-					</a>
-					<div class="shadow-block">
-						<p>Dungeons</p>
+						<div class="shadow-block">
+							<p>Dungeons</p>
+						</div>
 					</div>
-				</div>
+				</a>
 				<div class="shop-info">
 					<h1>Dungeons</h1>
 					<div class="text">

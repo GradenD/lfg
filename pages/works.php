@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="css/works.css">
 <section id="works" class="no-margin works-img fon wrapper">
-	<div class="card_container container index-blog">
+	<div class="card_container container">
 		<form class="action-form" method="post" action="#">				
 			<div class="works-form">
 				<div class="works-tinfo">

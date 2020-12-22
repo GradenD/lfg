@@ -45,7 +45,8 @@
 	</div>
 </section>
 
-<div class="card_container container index-blog">
+<div class="card_container index-blog">
+<div class="container">
 	<div class="card-columns block_content">
 		<a href="#">
 		<div class="card">
@@ -120,4 +121,5 @@
 		</a>
 	</div>
 	
+</div>
 </div>

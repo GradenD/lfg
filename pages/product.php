@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="css/combobox.css">
 <link rel="stylesheet" type="text/css" href="css/checkbox.css">
 <section id="product" class="no-margin product-img fon wrapper">
-	<div class="card_container container index-blog">
+	<div class="card_container container">
 		<div class="product-form">
 			<div id="config-form" class="config-form">
 				<div class="config-mb ">

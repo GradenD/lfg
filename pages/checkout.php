@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="css/checkout.css">
 <link rel="stylesheet" type="text/css" href="css/checkbox.css">
 <section id="checkout" class="no-margin checkout-img fon wrapper">
-	<div class="card_container container index-blog">
+	<div class="card_container container">
 		<form class="action-form" method="post" action="#">				
 			<h1 class="h1-glav">Checkout</h1>
 			<div class="checkout-form">
