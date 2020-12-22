@@ -146,7 +146,7 @@ $(document).ready(function(){
     });
 });
 
-//позицирование checkbox
+//позицирование checkbox, чтоб красиво было
 $(document).ready(function(){
 	let combo = $('#info-config .bio-row');
 	let i = 0;

@@ -7,7 +7,6 @@ body {
 	font-style: normal;
 	font-weight: 500;
 	color: #fff;
-	filter: expression(document.execCommand("BackgroundImageCache", false, true));
 }
 
 .flex-wrapper{
@@ -1382,7 +1381,6 @@ input::-webkit-input-placeholder {
 	position: absolute;
 	display: inline-block;
 	top: 0;
-	background-color: #ffff;
 	border-radius: 100%;
 	width: 15px;
 	height: 15px;
