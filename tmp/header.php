@@ -16,13 +16,15 @@
     <link rel="shortcut icon" href="img/logo.png">
   </head>
 <body>
+	<!-- preloader -->
 	<div class="preloader">
   		<div class="preloader__row">
     		<div class="preloader__item"></div>
     		<div class="preloader__item"></div>
   		</div>
 	</div>
-	<div class="flex-wrapper">
+	<!-- content -->
+	<div class="flex-wrapper">  <!-- flex разметка страницы, прижатый футер, добавлен в commit cb980d57bbe627e81f0a1145313c7fbfe80d1870 -->
 		<header id="header">
 			<div class="pc">
 				<?php 

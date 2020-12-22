@@ -113,11 +113,9 @@
 		        <label class="col-12 col-pad control-label"><p>Key lvl</p></label>
 		        <div class="col-12 col-pad">
                     <input type="range" 
-                        min="10"
-                        max="22" 
-                        value="1" 
-                        step="1" 
-                        values="3" 
+                        min="1" 
+						max="7" 
+						step="1" 
                     class='range-control'>
 		        </div>
 			</div>

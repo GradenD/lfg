@@ -2,22 +2,19 @@
 $(document).ready(function(){	
 
     $(".range-control").each(function(){
-        let values = [];
-        if($(this).attr('values') !== ''){
-            values = $(this).attr('values').split(',');
-            console.log(values);
-        }
+		let val = []; /* массив для values*/ 
+		let min = $(this).attr('min');
+		let max = $(this).attr('max');
+		let sum = Number(max) - Number(min);
+		for ( i = 0; i <= sum; i++) { /* заполняем массив */
+			val[i] = i + Number(min);
+		}
         let rangeSettings = {
-            min: $(this).attr('min'),
-            max: $(this).attr('max'),
-            step:$(this).attr('step'),
-            grid: true,
-             prettify_enabled: true
+			step:$(this).attr('step'), /* шаг */
+			from: 0, /* начальный шаг */
+			grid: true,
+			values: val /* выводим массив */
         };
-
-        if(values.length > 0){
-            Object.defineProperty(rangeSettings, 'values', {value: values});
-        }
         $(this).ionRangeSlider(rangeSettings);
     });
 
@@ -52,7 +49,7 @@ $('.list').click(function(){
 // список
 $(document).ready(function(){	
 
-	//длина списка
+	//длина списка, определяем длину списков и выдаем классы, иначе все не красиво 
 	let length = $('#info-config .bio-row');
 	$.each(length, function(){
 		//один список
