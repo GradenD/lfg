@@ -6,7 +6,8 @@ body {
     font-family: 'Barlow';
 	font-style: normal;
 	font-weight: 500;
-	color: #fff
+	color: #fff;
+	filter: expression(document.execCommand("BackgroundImageCache", false, true));
 }
 
 .flex-wrapper{
