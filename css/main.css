@@ -1419,3 +1419,85 @@ input::-webkit-input-placeholder {
   .loaded .preloader {
 	display: none;
   }
+
+
+
+
+
+
+
+/* index 06.02 */
+
+.index-blog p{
+	color: #555;
+	font-size: 1.2rem;
+}
+
+.index-blog h1, h2, h3{
+    color: #222;
+}
+
+.mb50 {
+    margin-bottom: 50px;
+}
+
+.index-info p{
+    color: #555;
+}
+
+.index-info h1, h2, h3{
+    color: #D3795E;
+	font-size: 1.7rem;
+	margin-bottom: 1rem;
+}
+
+.index-info .index-info-items{
+	width: 100%;
+	margin-bottom: 3rem;
+}
+
+.index-info .index-info-items .index-text{
+	width: 60%;
+}
+
+.index-info .index-info-items .index-info-img{
+	width: 35%;	
+}
+
+.index-info .index-info-items .index-info-img img{
+	width: 100%;
+	text-align: center;
+}
+
+.index-info .index-info-left{
+	text-align: left;
+}
+
+
+.index-info .index-info-right{
+	text-align: right;
+}
+
+
+@media (max-width: 991px){
+	.index-info .index-info-items{
+		flex-direction: column;
+	}
+
+	.index-info .index-info-right{
+		flex-direction: column-reverse;
+		text-align: left;
+	}
+
+	.index-info .index-info-items .index-text{
+		width: 100%;
+	}
+
+	.index-info .index-info-items .index-info-img{
+		width: 100%;	
+		margin-bottom: 3rem;
+	}
+}
+
+
+/* /index 06.02 */

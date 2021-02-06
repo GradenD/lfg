@@ -105,6 +105,15 @@
 			    <div class="check-r">
 				    <p>Champions of Azeroth</p>
 			    </div>
+			</div>
+			<div class="checkbox">
+			    <div class="check-l">
+			    	<input type="checkbox" id="cb6" checked>
+				    <label class="check" for="cb6"><div class="tick"></div></label>
+			    </div>
+			    <div class="check-r">
+				    <p>Champions of Azeroth</p>
+			    </div>
 		    </div>
 	    </div>
         <!-- 5 строка ползунок -->
@@ -113,8 +122,8 @@
 		        <label class="col-12 col-pad control-label"><p>Key lvl</p></label>
 		        <div class="col-12 col-pad">
                     <input type="range" 
-                        min="1" 
-						max="7" 
+                        min="2" 
+						max="15" 
 						step="1" 
                     class='range-control'>
 		        </div>

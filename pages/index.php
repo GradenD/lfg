@@ -46,6 +46,8 @@
 </section>
 
 <div class="card_container index-blog">
+
+<!--
 <div class="container">
 	<div class="card-columns block_content">
 		<a href="#">
@@ -119,7 +121,72 @@
 			</div>
 		</div>
 		</a>
-	</div>
-	
+	</div>	
 </div>
+
+-->
+
+
+<div class="index-info mb50 container">
+	<div class="index-info-items index-info-left d-flex justify-content-between">
+		<div class="index-text">
+			<h1>LFG - Professional carry service!</h1>
+			<p>
+				We provide fast, secure and reliable <strong>boost services</strong> that meet all our customers' needs.
+			</p>
+			<p>
+				We are game enthusiasts just as you are and our main goal is to make your game experience smooth and enjoyable. 
+				For this reason we have many products and options to choose from to meet your exact needs. 
+				We also have a custom order section where you can request any service that is not listed 
+				and we will do our best to accomplish it for you.
+			</p>
+		</div>
+		<div class="index-info-img">
+			<img data-src="img/index/png-2.png">
+		</div>
+	</div>
+	<div class="index-info-items index-info-right d-flex justify-content-between">
+		<div class="index-info-img">
+			<img data-src="img/index/png-1-01.png">
+		</div>
+		<div class="index-text">
+			<h1>Looking for a Group?</h2>
+			<p>
+				We provide <strong>WoW Boost services</strong> (Mythic Dungeons, Mythic Plus Boost services, 
+				Raider.io score (R.I.O.), Powerleveling, Torghast Boost, PvP boost, WoW Quest’s, Rare mounts), 
+				<strong>WoW Raid Boosts Castle Nathria</strong> (and many WoW Carry services). LFG boost community 
+				will answer your questions, tell you the shortest way to achieve your goals, listen and help you.
+			</p>
+			<p>
+				LFG is ready to provide <strong>the best World of Warcraft players</strong> in all areas. 
+				If you can't decide on a product or are not sure what you need-round-the-clock online support 
+				is always ready to help you choose the most suitable option. Any questions that arise will be resolved as a 
+				matter of priority and we give a 100% guarantee on the quality of services provided, otherwise we will refund your money. 
+				I sincerely wish that the LFG team became your best friend and ally in the battle on the vast expanses of your 
+				favorite game, let's write the history of Azeroth together!
+			</p>
+		</div>
+	</div>
+	<div class="index-info-items index-info-left d-flex justify-content-between">
+		<div class="index-text">
+			<h1>Custom Services</h3>
+			<p>
+				Don’t hesitate to ask! If there are some boosting services not present at our service list, 
+				it doesn’t mean we can’t do it! Just ask our fabulous customer support and we will discuss all the details with you.
+			</p>
+			<p>
+				Without further ado start your journey in a big world of professional gaming. We’re always here for you to help!
+			</p>
+		</div>
+		<div class="index-info-img">
+			<img data-src="img/index/png-3.png">
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
 </div>
