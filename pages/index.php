@@ -150,7 +150,7 @@
 			<img data-src="img/index/png-1-01.png">
 		</div>
 		<div class="index-text">
-			<h1>Looking for a Group?</h2>
+			<h1>Looking for a Group?</h1>
 			<p>
 				We provide <strong>WoW Boost services</strong> (Mythic Dungeons, Mythic Plus Boost services, 
 				Raider.io score (R.I.O.), Powerleveling, Torghast Boost, PvP boost, WoW Quest’s, Rare mounts), 
@@ -169,7 +169,7 @@
 	</div>
 	<div class="index-info-items index-info-left d-flex justify-content-between">
 		<div class="index-text">
-			<h1>Custom Services</h3>
+			<h1>Custom Services</h1>
 			<p>
 				Don’t hesitate to ask! If there are some boosting services not present at our service list, 
 				it doesn’t mean we can’t do it! Just ask our fabulous customer support and we will discuss all the details with you.
